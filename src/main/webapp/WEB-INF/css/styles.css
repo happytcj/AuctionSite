@@ -1,0 +1,43 @@
+.center {
+    width:500px;
+    position:absolute;
+    margin:auto;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.largerWidth {
+    width: 700px;
+}
+
+.error {
+    color:red;
+    font-weight:bold;
+}
+
+.success {
+    color:green;
+    font-weight:bold;
+}
+
+.alignCenter {
+    text-align:center;
+}
+
+.alignRight {
+    text-align:right;
+}
+
+a {
+    display:block;
+}
+
+.hidden {
+    display:none;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
