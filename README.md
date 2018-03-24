@@ -1,2 +1,2 @@
 # AuctionProject
-3/24/19: Steph - Login functionality so far
+3/24/18: Steph - Login functionality so far
