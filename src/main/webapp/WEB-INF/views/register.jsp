@@ -17,7 +17,7 @@
 
 <body class="center">
 <img src="/images/GTBay%20Logo.png"/>
-<form action="/" id="registrationForm" method="POST" onsubmit="return verifyRegisterFields();">
+<form action="/register" id="registrationForm" method="POST" onsubmit="return verifyRegisterFields();">
     <table class="table">
         <tr>
             <td>
@@ -62,7 +62,7 @@
     </table>
     <div class="alignCenter">
         <input class="btn btn-success" type="button" value="Cancel" onclick="location.href = '/'" />
-        <input class="btn btn-success" type="submit" value="Register" />
+        <input class="btn btn-success" type="submit" value="Register" onclick="location.href = '/register'"/>
     </div>
 </form>
 
