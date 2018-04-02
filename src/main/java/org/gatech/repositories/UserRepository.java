@@ -57,6 +57,8 @@ public class UserRepository {
                     env.getProperty("spring.datasource.username"), env.getProperty("spring.datasource.password"));
             String query = "INSERT INTO User (first_name, last_name, username, password) VALUES (?, ?, ?, ?);";
 
+            
+
             // create the java statement
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, firstName);
