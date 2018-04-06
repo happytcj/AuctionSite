@@ -25,15 +25,18 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String Register(@RequestParam("username") String userName,
+    public String Register(
+                        @RequestParam("username") String userName,
                         @RequestParam("pass") String password,
+                        @RequestParam("firstname") String firstName,
+                        @RequestParam("lastname") String lastName,
                         HttpServletRequest request) {
-        User user = userService.checkRegister(userName, password);
-        if (user.getUserName() == null) { // we did not find a user with this registration
+        Boolean registerSuccess = userService.createUser(firstName, lastName, userName, password);
+        if (!registerSuccess) { // user already exists
             return "redirect:/?error=t";
         }
         request.getSession(true)
-                .setAttribute("user", user);
+                .setAttribute("registerSuccess", registerSuccess);
         return "redirect:/homepage";
     }
 }

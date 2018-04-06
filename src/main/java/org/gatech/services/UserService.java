@@ -1,5 +1,6 @@
 package org.gatech.services;
 
+import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import org.gatech.models.AdminUser;
 import org.gatech.models.User;
 import org.gatech.repositories.UserRepository;
@@ -25,17 +26,11 @@ public class UserService {
         return user;
     }
 
-    public User checkRegister(String userName, String password) {
-        User user = userRepository.findUserByUserNamePassword(userName, password);
-        if (user.getUserName() != null) { // successful register
-            if (userRepository.isAdminUser(user)) {
-                user = userRepository.fetchAdminUser(user);
-            }
-        }
-        return user;
-    }
-
     public boolean createUser(String firstName, String lastName, String userName, String password) {
+        User user = userRepository.findUserByUserNamePassword(userName, password);
+        if (user.getUserName() != null) { // user doesn't yet exist
+            return false;
+        }
         return userRepository.createUser(firstName, lastName, userName, password);
     }
 

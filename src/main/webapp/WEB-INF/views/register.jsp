@@ -32,7 +32,7 @@
                 Last Name
             </td>
             <td>
-                <input type="text" name="firstname" id="txtLastname"/>
+                <input type="text" name="lastname" id="txtLastname"/>
             </td>
         </tr>
         <tr>
