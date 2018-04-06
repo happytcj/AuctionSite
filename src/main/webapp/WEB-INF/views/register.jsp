@@ -62,13 +62,13 @@
     </table>
     <div class="alignCenter">
         <input class="btn btn-success" type="button" value="Cancel" onclick="location.href = '/'" />
-        <input class="btn btn-success" type="submit" value="Register" onclick="location.href = '/register'"/>
+        <input class="btn btn-success" type="submit" value="Register"/>
     </div>
 </form>
 
 <br/>
 
-<c:if test="${not empty error}">
+<c:if test="${not empty error_register}">
     <div class="alignCenter">
         <label class="error">Registration Failed.</label>
     </div>

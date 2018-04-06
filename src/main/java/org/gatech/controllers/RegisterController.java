@@ -18,9 +18,9 @@ public class RegisterController {
     private UserService userService;
 
     @GetMapping("/register")
-    public String loadRegisterPage(@RequestParam(name="error", required = false) String error,
+    public String loadRegisterPage(@RequestParam(name="error", required = false) String error_register,
                                 Model m) {
-        m.addAttribute("error", error);
+        m.addAttribute("error", error_register);
         return "register";
     }
 
@@ -33,7 +33,7 @@ public class RegisterController {
                         HttpServletRequest request) {
         Boolean registerSuccess = userService.createUser(firstName, lastName, userName, password);
         if (!registerSuccess) { // user already exists
-            return "redirect:/?error=t";
+            return "redirect:/?error=r";
         }
         request.getSession(true)
                 .setAttribute("registerSuccess", registerSuccess);
